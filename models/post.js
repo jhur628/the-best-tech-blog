@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 
 class Post extends Model {};
 
+// Model for posts. Includes: id, title of post, text of post, and user id(using user id foreign key)
 Post.init(
     {
         id: {

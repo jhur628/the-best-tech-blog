@@ -1,3 +1,5 @@
+// Used for connection in server.js
+
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
