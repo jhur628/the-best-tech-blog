@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "My First Tech Blog",
+        "text": "I always wanted to blog about tech. Now I can!",
+        "date_created": "06/28/2021 04:00 PM",
+        "user_id": "1"
+    },
+    {
+        "id": 2,
+        "title": "What is a Tech Blog?",
+        "text": "You ever ask yourself that? Well... I want to show you.",
+        "date_created": "06/04/2021 04:13 AM",
+        "user_id": "2"
+    },
+    {
+        "id": 3,
+        "title": "I Love Puppies!",
+        "text": "I don't know anything about tech, but I sure do love puppies!",
+        "date_created": "09/04/2021 09:40 PM",
+        "user_id": "3"
+    }
+]
