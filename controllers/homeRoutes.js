@@ -69,9 +69,19 @@ router.get('/signin', async (req, res) =>{
     if(req.session.logged_in) {
         res.redirect('/');
         return;
+    } else {
+        res.render('signin');
     };
+});
 
-    res.render('signin');
-})
+// Route to sign up
+router.get('/signup', async (req, res) => {
+    if(req.session.logged_in) {
+        res.redirect('/');
+        return;
+    } else {
+        res.render('signup');
+    };
+});
 
 module.exports = router;
