@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const { get } = require('express/lib/response');
 const { User, Post, Comment } = require('../models');
+const isAuth = require('../utils/auth')
 
 // Get all posts and join with user data
 router.get('/', async (req, res) => {
@@ -66,7 +66,7 @@ router.get('/post/:id', async (req, res) => {
 
 // Route to sign in
 router.get('/signin', async (req, res) =>{
-    if(req.session.logged_in) {
+    if (req.session.logged_in) {
         res.redirect('/');
         return;
     } else {
@@ -76,11 +76,39 @@ router.get('/signin', async (req, res) =>{
 
 // Route to sign up
 router.get('/signup', async (req, res) => {
-    if(req.session.logged_in) {
+    if (req.session.logged_in) {
         res.redirect('/');
         return;
     } else {
         res.render('signup');
+    };
+});
+
+// Route to dashboard
+router.get('/dashboard', isAuth, async (req, res) => {
+    try {
+        const userData = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] },
+            include: [
+                { model: Post },
+                { 
+                    model: Comment,
+                    include: {
+                        model: Post,
+                        attributes: ['title'],
+                    },
+                },
+            ],
+        });
+
+        const user = userData.map((dashUser) => dashUser.get({ plain: true }));
+
+        res.render('dashboard', {
+            ...user,
+            logged_in: true,
+        });
+    } catch (err) {
+        res.status(500).json(err);
     };
 });
 
