@@ -1,32 +1,11 @@
 [
     {
-        "id": 1,
-        "comment": "Cool! Can't wait to read!",
-        "user_id": 2,
-        "post_id": 1
+        "comment": "Cool! Can't wait to read!"
     },
     {
-        "id": 2,
-        "comment": "Show me then! Excited for your posts!",
-        "user_id": 1,
-        "post_id": 2
+        "comment": "Excited for your posts!"
     },
     {
-        "id": 3,
-        "comment": "NO! PUPPIES!",
-        "user_id": 3,
-        "post_id": 1
-    },
-    {
-        "id": 4,
-        "comment": "Not everything is about puppies...",
-        "user_id": 1,
-        "post_id": 1
-    },
-    {
-        "id": 5,
-        "comment": "I think you're at the wrong place...",
-        "user_id": 2,
-        "post_id": 3
+        "comment": "Nice!"
     }
 ]
