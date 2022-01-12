@@ -1,11 +1,12 @@
-const newPostHandler = async (event) => {
+const editPostHandler = async (event) => {
     event.preventDefault();
   
     const title = document.querySelector('#post-title').value.trim();
     const text = document.querySelector('#post-text').value.trim();
+    const id = document.querySelector('#postId').innerHTML;
    
-    if (title && text) {
-      const response = await fetch(`/api/posts`, {
+    if (title && text && id) {
+      const response = await fetch(`/api/posts/${id}`, {
         method: 'PUT',
         body: JSON.stringify({ title, text }),
         headers: {
@@ -16,11 +17,11 @@ const newPostHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/dashboard');
       } else {
-        alert('Failed to create post');
+        alert('Failed to update post');
       }
     }
 };
 
 document
-  .querySelector('.new-post-form')
-  .addEventListener('submit', newPostHandler);
+  .querySelector('.edit-post-form')
+  .addEventListener('submit', editPostHandler);
