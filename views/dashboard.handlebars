@@ -25,4 +25,18 @@
     {{/each}}
 </div>
 
+<h3>Comments:</h3>
+
+<div class="col-md-6 post-list">
+    {{#each posts as |post|}}
+    <div class="row mb-2">
+        <div class="col-md-8">
+        <h4><a href="/editpost/{{post.id}}">{{post.title}}</a></h4>
+        </div>
+        <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" type="click" data-id="{{post.id}}">DELETE</button>
+        </div>
+    </div>
+    {{/each}}
+</div>
 <script src="./js/dashboard.js"></script>
