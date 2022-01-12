@@ -125,7 +125,7 @@ router.get('/edit/:id', isAuth, async (req, res) => {
 
         const post = postData.get({ plain: true });
 
-        res.render('editPost',{
+        res.render('editpost',{
             post,
             logged_in: true,
         });

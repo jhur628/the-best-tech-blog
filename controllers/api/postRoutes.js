@@ -15,11 +15,31 @@ router.post('/', isAuth, async (req, res) => {
     };
 });
 
-router.post('/edit/:id', isAuth, async (req, res) => {
+router.delete('/:id', isAuth, async (req, res) => {
+    try {
+        const postData = Post.destroy({
+            where: {
+                id: req.params.id,
+                user_id: req.session.user_id,
+            },
+        });
+
+        if (!postData) {
+            res.status(404).json({ message: 'No post found with this id!' });
+            return;
+        };
+
+        res.status(200).json(postData);
+    } catch (err) {
+        res.status(500).json(err);
+    };
+});
+
+router.post('/:id', isAuth, async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id);
-
         
+
     } catch {
 
     }
