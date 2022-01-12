@@ -66,7 +66,7 @@ router.get('/post/:id', async (req, res) => {
 // Route to sign in
 router.get('/signin', async (req, res) =>{
     if (req.session.logged_in) {
-        res.redirect('/');
+        res.redirect('/dashboard');
         return;
     } else {
         res.render('signin');
@@ -100,13 +100,36 @@ router.get('/dashboard', isAuth, async (req, res) => {
             ],
         });
 
-        const user = userData.map((dashUser) => dashUser.get({ plain: true }));
+        const user = userData.get({ plain: true });
 
         res.render('dashboard', {
             ...user,
             logged_in: true,
         });
     } catch (err) {
+        res.status(500).json(err);
+    };
+});
+
+router.get('/newpost', async (req, res) => {
+        if (req.session.logged_in) {
+            res.render('newpost');
+        } else {
+            res.redirect('/');
+        };
+})
+
+router.get('/edit/:id', isAuth, async (req, res) => {
+    try {
+        const postData = await Post.findByPk(req.params.id);
+
+        const post = postData.get({ plain: true });
+
+        res.render('editPost',{
+            post,
+            logged_in: true,
+        });
+    } catch {
         res.status(500).json(err);
     };
 });
