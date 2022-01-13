@@ -14,12 +14,12 @@ GitHub Repository: [https://github.com/jhur628/the-best-tech-blog](https://githu
 Deployed Application: [https://the-best-tech-blog.herokuapp.com/](https://the-best-tech-blog.herokuapp.com/)
 
 ## Table of Contents
-### [Installation](#Installation)
-### [Usage](#Usage)
-### [Credits](#Credits)
-### [Questions](#Questions)
-### [Screenshots](#Screenshots)
-### [License](#License)
+1. [Installation](#Installation)
+2. [Usage](#Usage)
+3. [Credits](#Credits)
+4. [Questions](#Questions)
+5. [Screenshots](#Screenshots)
+6. [License](#License)
 
 ## Installation
 No installation required. The application is deployed on Heroku.
