@@ -76,7 +76,7 @@ router.get('/signin', async (req, res) =>{
 // Route to sign up
 router.get('/signup', async (req, res) => {
     if (req.session.logged_in) {
-        res.redirect('/');
+        res.redirect('/dashboard');
         return;
     } else {
         res.render('signup');
