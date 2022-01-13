@@ -94,7 +94,7 @@ router.get('/dashboard', isAuth, async (req, res) => {
                     model: Comment,
                     include: {
                         model: Post,
-                        attributes: ['title'],
+                        attributes: ['title', 'id'],
                     },
                 },
             ],

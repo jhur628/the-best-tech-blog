@@ -10,7 +10,7 @@
 <br>
 <br>
 
-<h3>Current Posts:</h3>
+<h3>Edit Posts:</h3>
 
 <div class="col-md-6 post-list">
     {{#each posts as |post|}}
@@ -25,16 +25,16 @@
     {{/each}}
 </div>
 
-<h3>Comments:</h3>
+<h3>Edit Comments:</h3>
 
-<div class="col-md-6 post-list">
-    {{#each posts as |post|}}
+<div class="col-md-6 comment-list">
+    {{#each comments as |comment|}}
     <div class="row mb-2">
         <div class="col-md-8">
-        <h4><a href="/editpost/{{post.id}}">{{post.title}}</a></h4>
+        <h4>Comment: <a href="/editcomment/{{comment.id}}">{{comment.text}}</a> <br> Post: <a href="/post/{{comment.post.id}}">{{comment.post.title}}</a></h4>
         </div>
         <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" type="click" data-id="{{post.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" type="click" data-id="{{comment.id}}">DELETE</button>
         </div>
     </div>
     {{/each}}
