@@ -125,11 +125,26 @@ router.get('/editpost/:id', isAuth, async (req, res) => {
 
         const post = postData.get({ plain: true });
 
-        res.render('editpost',{
+        res.render('editpost', {
             post,
             logged_in: true,
         });
-    } catch {
+    } catch (err) {
+        res.status(500).json(err);
+    };
+});
+
+router.get('/editcomment/:id', isAuth, async (req, res) => {
+    try {
+        const commentData = await Comment.findByPk(req.params.id);
+
+        const comment = commentData.get({ plain: true });
+
+        res.render('editcomment', {
+            comment,
+            logged_in: true,
+        });
+    } catch (err) {
         res.status(500).json(err);
     };
 });
