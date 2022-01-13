@@ -3,6 +3,7 @@
   <p>{{text}}</p>
   <h5>Created by {{user.name}} on {{date_created}}</h5>
   <br>
+  <p hidden id="postId">{{id}}</p>
   <div>
       <h6>Comments:</h6>
       <br>
@@ -14,4 +15,18 @@
       <br>
       {{/each}}
   </div>
+
+  <form class="make-comment-form">
+    <h2>Add a Comment:</h2>
+    <br>
+    <div class="form-group">
+        <input id="new-comment" type="text" class="form-input">
+    </div>
+    <br>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Save Post</button>
+    </div>
+</form>
 </div>
+
+<script src="/js/makecomment.js"></script>
