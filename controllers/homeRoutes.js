@@ -111,9 +111,11 @@ router.get('/dashboard', isAuth, async (req, res) => {
     };
 });
 
-router.get('/newpost', async (req, res) => {
+router.get('/newpost', isAuth, async (req, res) => {
         if (req.session.logged_in) {
-            res.render('newpost');
+            res.render('newpost', {
+                logged_in: true,
+            });
         } else {
             res.redirect('/');
         };
