@@ -34,7 +34,7 @@ When the user is at the dashboard page, the user may make a new post, edit/delet
 
 When the user clicks the sign out button on the nav bar, the user will be signed out and sent to the homepage.
 
-When the user's session will be timed out after a day, and the user will signed out of their account.
+When the user has been logged on for a day, the user's session will be timed out and the user will signed out of their account.
 ## Credits
 A lot of credit to my instructor, TAs, and my study group. I don't think I could have done this one alone. Thank you!
 ## Questions
